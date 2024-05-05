@@ -13,5 +13,13 @@ spring:
     include: null
   graphql:
     graphiql:
-      enabled: true
-# http://localhost:8080/graphiql
+      enabled: true                  # http://localhost:8080/graphiql
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true

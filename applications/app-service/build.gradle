@@ -1,6 +1,8 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation project( ':memory-repository')
+	implementation project( ':reactive-web')
 	implementation project( ':graphql-api')
     implementation project(':model')
     implementation project(':usecase')
