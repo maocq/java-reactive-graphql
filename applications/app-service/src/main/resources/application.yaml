@@ -1,14 +1,17 @@
-##Spring Configuration
 server:
   port: 8080
 spring:
   application:
-    name: JavaReactiveGraphQL
+    name: "JavaReactiveGraphQL"
   devtools:
     add-properties: false
   h2:
     console:
       enabled: true
-      path: /h2
+      path: "/h2"
   profiles:
-    include:
+    include: null
+  graphql:
+    graphiql:
+      enabled: true
+# http://localhost:8080/graphiql

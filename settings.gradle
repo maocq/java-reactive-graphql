@@ -14,3 +14,5 @@ include ':usecase'
 project(':app-service').projectDir = file('./applications/app-service')
 project(':model').projectDir = file('./domain/model')
 project(':usecase').projectDir = file('./domain/usecase')
+include ':graphql-api'
+project(':graphql-api').projectDir = file('./infrastructure/entry-points/graphql-api')

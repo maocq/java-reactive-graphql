@@ -1,0 +1,5 @@
+type BankAccount {
+    id: ID
+    userName: String!
+    balance: Float,
+}
