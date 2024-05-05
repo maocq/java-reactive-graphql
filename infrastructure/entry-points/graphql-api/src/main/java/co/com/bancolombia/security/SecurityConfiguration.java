@@ -8,7 +8,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;
@@ -23,7 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Configuration
-@EnableWebFluxSecurity
+//@EnableWebFluxSecurity  // Linea no necesaria
 @EnableReactiveMethodSecurity
 public class SecurityConfiguration {
 
@@ -49,6 +48,7 @@ public class SecurityConfiguration {
                         .pathMatchers("/actuator/*").permitAll()
 
                         .pathMatchers("/graphql").permitAll()
+                        .pathMatchers("/graphiql").permitAll()
 
                         .pathMatchers("/api/**").hasAnyRole("foo", "bar")
                         .anyExchange().authenticated())
