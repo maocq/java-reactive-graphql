@@ -25,4 +25,14 @@ public class BankAccountMemoryRepository implements BankAccountRepository {
         return Mono.just(List.of(bankAccount))
                 .delayElement(Duration.ofMillis(200));
     }
+
+    @Override
+    public Mono<BankAccount> save(String userName) {
+        var bankAccount = BankAccount.builder()
+                .id(UUID.randomUUID().toString())
+                .userName(userName)
+                .balance(0f).build();
+        return Mono.just(bankAccount)
+                .delayElement(Duration.ofMillis(100));
+    }
 }

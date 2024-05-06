@@ -9,4 +9,5 @@ public interface BankAccountRepository {
 
     Mono<BankAccount> findById(String id);
     Mono<List<BankAccount>> findAll();
+    Mono<BankAccount> save(String accountName);
 }

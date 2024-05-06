@@ -3,3 +3,7 @@ type BankAccount {
     userName: String!
     balance: Float,
 }
+
+input NewBankAccountInput {
+    userName: String!
+}
